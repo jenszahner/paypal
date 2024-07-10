@@ -490,7 +490,7 @@ type (
 		ID            string                 `json:"id,omitempty"`
 		Status        string                 `json:"status,omitempty"`
 		Intent        string                 `json:"intent,omitempty"`
-		PurchaseUnits []PurchaseUnitRequest  `json:"purchase_units,omitempty"`
+		PurchaseUnits []PurchaseUnitResponse `json:"purchase_units,omitempty"`
 		Payer         *PayerWithNameAndPhone `json:"payer,omitempty"`
 	}
 
