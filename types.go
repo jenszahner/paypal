@@ -783,6 +783,11 @@ type (
 		Description string `json:"description,omitempty"`
 		SKU         string `json:"sku,omitempty"`
 		Category    string `json:"category,omitempty"`
+
+		// ImageUrl
+		// UPC
+
+
 	}
 
 	// ItemList struct
@@ -889,6 +894,28 @@ type (
 		Shipping           *ShippingDetail     `json:"shipping,omitempty"`
 		PaymentInstruction *PaymentInstruction `json:"payment_instruction,omitempty"`
 	}
+
+	Payment	struct {
+		Authorizations		[]Authorization			`json:"authorizations,omitempty"`
+		Captures					[]Capture					  `json:"captures,omitempty"`
+		Refunds						[]Refund					  `json:"refunds,omitempty"`
+	}
+
+	PurchaseUnitResponse struct {
+		ReferenceID        string              `json:"reference_id,omitempty"`
+		Description        string              `json:"description,omitempty"`
+		CustomID           string              `json:"custom_id,omitempty"`
+		InvoiceID          string              `json:"invoice_id,omitempty"`
+		ID								 string							 `json:"id,omitempty"`
+		SoftDescriptor     string              `json:"soft_descriptor,omitempty"`
+		Items              []Item              `json:"items,omitempty"`
+		Amount             *PurchaseUnitAmount `json:"amount"`
+		Payee              *PayeeForOrders     `json:"payee,omitempty"`
+		PaymentInstruction *PaymentInstruction `json:"payment_instruction,omitempty"`
+		Shipping           *ShippingDetail     `json:"shipping,omitempty"`
+		Payments					 *Payment 				   `json:"payments,omitempty"`
+	}
+
 
 	// MerchantPreferences struct
 	MerchantPreferences struct {
